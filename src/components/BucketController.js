@@ -16,12 +16,14 @@ class BucketController extends Component {
   render() {
     return (
       <div className="bucket-controller">
-        <input
-          type="text"
-          onChange={e => this.setState({ bucketName: e.target.value })}
-          value={this.state.bucketName}
-        />
-        <button onClick={this.handleNewStageButton}>Create New Stage</button>
+        <form>
+          <input
+            type="text"
+            onChange={e => this.setState({ bucketName: e.target.value })}
+            value={this.state.bucketName}
+          />
+          <button onClick={this.handleNewStageButton}>Create New Stage</button>
+        </form>
       </div>
     );
   }
