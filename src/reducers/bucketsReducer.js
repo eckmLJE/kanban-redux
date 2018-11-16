@@ -28,13 +28,13 @@ const sampleBuckets = [
   }
 ];
 
-const findTask = (tasks, id) => tasks.find(task => task.id === id);
-
 const spreadNewState = state => ({
   ...state,
   buckets: [...state.buckets],
   tasks: [...state.tasks]
 });
+
+const findTask = (tasks, id) => tasks.find(task => task.id === id);
 
 const bucketsReducer = (
   state = {
