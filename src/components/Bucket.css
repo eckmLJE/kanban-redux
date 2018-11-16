@@ -1,12 +1,15 @@
 .bucket {
-  width: 25%;
   padding: 10px;
+  width: 225px;
 }
 
-.bucket-inner {
+.bucket-inner h1 {
+  margin: 10px;
+  margin-left: 0;
 }
 
 .bucket-inner ul {
+  min-height: 25px;
   border: 1px solid black;
   padding: 5px;
   list-style: none;
@@ -28,7 +31,7 @@
   margin-right: 5px;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 550px) {
   .bucket {
     width: 100%;
     max-width: 300px;

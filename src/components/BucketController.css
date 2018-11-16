@@ -1,0 +1,19 @@
+.bucket-controller {
+  width: 100%;
+  padding: 20px 30px;
+}
+
+.bucket-controller input {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.bucket-controller button {
+  border: none;
+  background: none;
+  border-bottom: 1px solid black;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}

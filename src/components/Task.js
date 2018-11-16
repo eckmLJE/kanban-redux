@@ -13,7 +13,7 @@ class Task extends Component {
           <button onClick={this.handlePromoteClick}>{">"}</button>
         </span>
       );
-    } else if (bucketId > 1 && bucketId < 4) {
+    } else if (bucketId > 1 && bucketId < this.props.buckets.length) {
       return (
         <span className="promote">
           <button onClick={this.handleDemoteClick}>{"<"}</button>
@@ -42,15 +42,16 @@ class Task extends Component {
   render() {
     return (
       <li className="task">
-        <span>{this.props.task.taskName}</span>
+        <span className="task-name">{this.props.task.taskName}</span>
         {this.renderPromoteButtons()}
       </li>
     );
   }
 }
-// const mapStateToProps = state => ({
-//   buckets: state.buckets.buckets
-// });
+
+const mapStateToProps = state => ({
+  buckets: state.buckets.buckets
+});
 
 const mapDispatchToProps = dispatch => ({
   promoteTask: task => dispatch(promoteTask(task)),
@@ -58,6 +59,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Task);

@@ -40,7 +40,8 @@ const bucketsReducer = (
   state = {
     buckets: sampleBuckets,
     tasks: sampleTasks,
-    taskIdCounter: 9
+    taskIdCounter: 9,
+    bucketIdCounter: 5
   },
   action
 ) => {
@@ -60,6 +61,11 @@ const bucketsReducer = (
       let demoteTask = findTask(demoteState.tasks, action.task.id);
       demoteTask.bucketId--;
       return demoteState;
+    case "ADD_NEW_BUCKET":
+      const newBucketState = spreadNewState(state);
+      action.bucket.id = newBucketState.bucketIdCounter++;
+      newBucketState.buckets.push(action.bucket);
+      return newBucketState;
     default:
       return state;
   }
